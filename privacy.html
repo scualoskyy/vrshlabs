@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aviso de Privacidad — Radar Pro | VR Labs</title>
+<meta name="description" content="Aviso de Privacidad de Radar Pro por VR Labs">
+<style>
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;line-height:1.65;color:#1a1a1a;max-width:780px;margin:0 auto;padding:32px 20px;background:#fff}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:19px;margin:32px 0 10px;border-bottom:1px solid #eee;padding-bottom:6px}h3{font-size:16px;margin:20px 0 8px}
+.muted{color:#666;font-size:14px}a{color:#0b57d0;text-decoration:none}a:hover{text-decoration:underline}
+.card{background:#f8f9fa;border:1px solid #e8eaed;border-radius:12px;padding:16px 18px;margin:16px 0}
+ul{padding-left:20px}li{margin:4px 0}
+.badge{display:inline-block;background:#e8f0fe;color:#174ea6;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
+code{background:#f1f3f4;padding:2px 6px;border-radius:6px;font-size:13px}
+hr{border:none;border-top:1px solid #eee;margin:28px 0}
+table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #e8eaed;padding:8px 10px;text-align:left;font-size:14px}th{background:#f8f9fa}
+</style>
+</head>
+<body>
+<p><a href="/">← VR Labs</a> <span class="badge">Radar Pro</span></p>
+<h1>Aviso de Privacidad — Radar Pro</h1>
+<p class="muted">VR Labs · Última actualización: 28 de agosto de 2026 · Vigente para la app <strong>com.radarpro.app</strong> en Google Play</p>
+
+<div class="card">
+<strong>Resumen en 30 segundos:</strong> Radar Pro <strong>no</strong> vende tus datos. La captura de pantalla y el OCR ocurren <strong>100% en tu dispositivo</strong> y nunca se suben imágenes. Solo enviamos telemetría anónima mínima (texto OCR ya anonimizado, plataforma Uber/DiDi) a Firebase para mejorar el parser, y usamos Firebase Auth / Crashlytics / Analytics y AdMob con tu consentimiento. Puedes borrar tus datos cuando quieras escribiendo a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a>.
+</div>
+
+<h2>1. Responsable</h2>
+<p><strong>VR Labs</strong> — Monterrey, N.L., México.<br>
+Contacto privacidad: <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a> · Sitio: <a href="https://vrshlabs.com">vrshlabs.com</a></p>
+
+<h2>2. Qué hace Radar Pro</h2>
+<p>Radar Pro te ayuda a decidir si un viaje de Uber o DiDi es rentable mientras conduces. Cada 800 ms captura la pantalla (MediaProjection), hace <strong>OCR on-device con ML Kit</strong>, extrae precio/km/min, compara con tus filtros (<code>$ / km</code>, <code>$ / hora</code>) y muestra un overlay verde/rojo (SYSTEM_ALERT_WINDOW). No interfiere con Uber/DiDi.</p>
+
+<h2>3. Datos que tratamos</h2>
+<table>
+<tr><th>Categoría</th><th>Ejemplo</th><th>Base legal / fin</th></tr>
+<tr><td><strong>Cuenta (si inicias sesión)</strong></td><td>email, UID de Firebase Auth</td><td>Ejecutar contrato, autenticación y suscripción</td></tr>
+<tr><td><strong>Telemetría anónima del parser</strong></td><td>texto OCR recortado (ej. "5 min · 2.9 km"), plataforma (Uber/DiDi), ratio/confianza</td><td>Interés legítimo: mejorar precisión y corregir errores de lectura</td></tr>
+<tr><td><strong>Diagnóstico y analítica</strong></td><td>eventos Firebase Analytics, reportes Crashlytics (modelo, OS, stack trace)</td><td>Interés legítimo: estabilidad y rendimiento</td></tr>
+<tr><td><strong>Publicidad (AdMob)</strong></td><td>ID de publicidad, impresiones</td><td>Consentimiento (puedes desactivar personalización en Ajustes de Google)</td></tr>
+</table>
+<p><strong>No recopilamos:</strong> imágenes de tu pantalla, contenido fuera de la tarjeta de oferta, ubicación precisa en segundo plano, contactos, ni datos bancarios. La imagen capturada se procesa en RAM y se descarta inmediatamente.</p>
+
+<h2>4. Permisos de Android y por qué se piden</h2>
+<ul>
+<li><code>SYSTEM_ALERT_WINDOW</code> — mostrar el semáforo verde/amarillo/rojo sobre Uber/DiDi.</li>
+<li><code>FOREGROUND_SERVICE + MEDIA_PROJECTION</code> — captura de pantalla mientras el servicio está activo (solo cuando tú lo inicias).</li>
+<li><code>POST_NOTIFICATIONS</code> — avisos de turno y estado del servicio.</li>
+<li><code>RECEIVE_BOOT_COMPLETED</code> — reprogramar recordatorios proactivos tras reiniciar (inexactos, no exactos).</li>
+<li><code>INTERNET + ACCESS_NETWORK_STATE</code> — sincronizar configuración remota (Remote Config) y telemetría.</li>
+</ul>
+
+<h2>5. Con quién se comparte</h2>
+<ul>
+<li><strong>Google Firebase</strong> (Firestore, Auth, Crashlytics, Analytics, Remote Config) — infraestructura en EE. UU./UE bajo DPA de Google.</li>
+<li><strong>Google Play Services / AdMob</strong> (ID ca-app-pub-7312412531615728~4519330514) — mediación de anuncios; ver <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Google</a>.</li>
+<li>No vendemos datos a terceros ni los compartimos con Uber/DiDi.</li>
+</ul>
+
+<h2>6. Transferencias internacionales</h2>
+<p>Firebase puede procesar datos fuera de México. Nos amparamos en cláusulas contractuales estándar de Google y tu consentimiento al usar la app.</p>
+
+<h2>7. Retención</h2>
+<ul>
+<li>Telemetría <code>ocr_diagnostics</code>: se conserva anonimizada para entrenar el parser; puedes pedir su borrado y se desasocia de tu UID.</li>
+<li>Logs Crashlytics/Analytics: hasta 14 meses.</li>
+<li>Cuenta: hasta que la elimines.</li>
+</ul>
+
+<h2>8. Tus derechos (LFPDPPP - México / GDPR si aplica)</h2>
+<p>Tienes derechos de <strong>Acceso, Rectificación, Cancelación y Oposición (ARCO)</strong>, portabilidad y revocación del consentimiento. Ejerce escribiendo a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a> con asunto "ARCO Radar Pro". Respondemos en máximo 20 días hábiles. También puedes: borrar la app, revocar permisos en Ajustes de Android, desactivar personalización de anuncios en <code>Ajustes → Google → Anuncios</code>, y solicitar supresión de tu cuenta desde la app (Ajustes → Eliminar cuenta).</p>
+
+<h2>9. Menores</h2>
+<p>Radar Pro es solo para conductores mayores de 18 años. No recopilamos conscientemente datos de menores.</p>
+
+<h2>10. Seguridad</h2>
+<p>Cifrado en tránsito (TLS), reglas Firestore con <code>request.auth != null</code> y validación, tokens OAuth con rotación, y minimización de datos. Ningún sistema es 100% seguro; notifícanos cualquier incidente al correo de contacto.</p>
+
+<h2>11. Cambios a este aviso</h2>
+<p>Publicaremos cambios en esta misma URL y actualizaremos la fecha. Si el cambio es material, te avisaremos dentro de la app o por correo.</p>
+
+<h2>12. Contacto y autoridad</h2>
+<p>Dudas o quejas: <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a>.<br>
+Autoridad en México: INAI — <a href="https://home.inai.org.mx" target="_blank" rel="noopener">home.inai.org.mx</a></p>
+
+<hr>
+<p class="muted">VR Labs · Radar Pro · <a href="https://vrshlabs.com">vrshlabs.com</a> · Este aviso cumple con la LFPDPPP y los requisitos de <a href="https://play.google.com/about/privacy-security-deception/user-data/" target="_blank" rel="noopener">Google Play - User Data</a> y <a href="https://play.google.com/about/privacy-security-deception/deception/" target="_blank" rel="noopener">Deception</a>. No constituye asesoría legal.</p>
+</body>
+</html>
