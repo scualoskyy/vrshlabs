@@ -20,72 +20,46 @@ table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #
 <body>
 <p><a href="/">← VR Labs</a> <span class="badge">Radar Pro</span></p>
 <h1>Aviso de Privacidad — Radar Pro</h1>
-<p class="muted">VR Labs · Última actualización: 28 de agosto de 2026 · Vigente para la app <strong>com.radarpro.app</strong> en Google Play</p>
+<p class="muted">VR Labs · Última actualización: 1 de octubre de 2026 · App <strong>com.radarpro.app</strong></p>
 
-<div class="card">
-<strong>Resumen en 30 segundos:</strong> Radar Pro <strong>no</strong> vende tus datos. La captura de pantalla y el OCR ocurren <strong>100% en tu dispositivo</strong> y nunca se suben imágenes. Solo enviamos telemetría anónima mínima (texto OCR ya anonimizado, plataforma Uber/DiDi) a Firebase para mejorar el parser, y usamos Firebase Auth / Crashlytics / Analytics y AdMob con tu consentimiento. Puedes borrar tus datos cuando quieras escribiendo a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a>.
-</div>
+<div class="card"><strong>Resumen:</strong> En Radar Pro 3.19.33 (versionCode 444), las capturas y el OCR se procesan en el dispositivo; las imágenes, el texto OCR y los detalles de los viajes no se envían automáticamente a nuestros servidores. La app descarga configuración técnica de Firebase. Los diagnósticos opcionales —incluidos informes de fallos— están desactivados inicialmente y solo se envían si los activas en Ajustes. No vendemos datos ni mostramos anuncios en esta versión.</div>
 
-<h2>1. Responsable</h2>
-<p><strong>VR Labs</strong> — Monterrey, N.L., México.<br>
-Contacto privacidad: <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a> · Sitio: <a href="https://vrshlabs.com">vrshlabs.com</a></p>
+<h2>1. Responsable y contacto</h2>
+<p>VR Labs es responsable del tratamiento de los datos relacionados con Radar Pro. Para consultas, solicitudes de acceso, corrección o eliminación, escribe a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a> con el asunto “Privacidad Radar Pro”.</p>
 
-<h2>2. Qué hace Radar Pro</h2>
-<p>Radar Pro te ayuda a decidir si un viaje de Uber o DiDi es rentable mientras conduces. Cada 800 ms captura la pantalla (MediaProjection), hace <strong>OCR on-device con ML Kit</strong>, extrae precio/km/min, compara con tus filtros (<code>$ / km</code>, <code>$ / hora</code>) y muestra un overlay verde/rojo (SYSTEM_ALERT_WINDOW). No interfiere con Uber/DiDi.</p>
+<h2>2. Qué hace la app</h2>
+<p>Radar Pro ayuda a evaluar ofertas de Uber y DiDi. Cuando autorizas la captura de pantalla de Android (MediaProjection), la app procesa imágenes en memoria y aplica OCR en el dispositivo. El OCR y los valores del viaje se usan localmente para calcular indicadores y mostrar el overlay. La app también puede guardar tu historial y estadísticas de turnos en el almacenamiento local del dispositivo. No solicitamos permisos de ubicación ni de contactos.</p>
 
-<h2>3. Datos que tratamos</h2>
-<table>
-<tr><th>Categoría</th><th>Ejemplo</th><th>Base legal / fin</th></tr>
-<tr><td><strong>Cuenta (si inicias sesión)</strong></td><td>email, UID de Firebase Auth</td><td>Ejecutar contrato, autenticación y suscripción</td></tr>
-<tr><td><strong>Telemetría anónima del parser</strong></td><td>texto OCR recortado (ej. "5 min · 2.9 km"), plataforma (Uber/DiDi), ratio/confianza</td><td>Interés legítimo: mejorar precisión y corregir errores de lectura</td></tr>
-<tr><td><strong>Diagnóstico y analítica</strong></td><td>eventos Firebase Analytics, reportes Crashlytics (modelo, OS, stack trace)</td><td>Interés legítimo: estabilidad y rendimiento</td></tr>
-<tr><td><strong>Publicidad (AdMob)</strong></td><td>ID de publicidad, impresiones</td><td>Consentimiento (puedes desactivar personalización en Ajustes de Google)</td></tr>
-</table>
-<p><strong>No recopilamos:</strong> imágenes de tu pantalla, contenido fuera de la tarjeta de oferta, ubicación precisa en segundo plano, contactos, ni datos bancarios. La imagen capturada se procesa en RAM y se descarta inmediatamente.</p>
-
-<h2>4. Permisos de Android y por qué se piden</h2>
+<h2>3. Datos tratados en Radar Pro 3.19.33 (versionCode 444)</h2>
 <ul>
-<li><code>SYSTEM_ALERT_WINDOW</code> — mostrar el semáforo verde/amarillo/rojo sobre Uber/DiDi.</li>
-<li><code>FOREGROUND_SERVICE + MEDIA_PROJECTION</code> — captura de pantalla mientras el servicio está activo (solo cuando tú lo inicias).</li>
-<li><code>POST_NOTIFICATIONS</code> — avisos de turno y estado del servicio.</li>
-<li><code>RECEIVE_BOOT_COMPLETED</code> — reprogramar recordatorios proactivos tras reiniciar (inexactos, no exactos).</li>
-<li><code>INTERNET + ACCESS_NETWORK_STATE</code> — sincronizar configuración remota (Remote Config) y telemetría.</li>
+<li><strong>En el dispositivo:</strong> imágenes capturadas, texto OCR, precio/tarifa, distancia, duración y estadísticas del viaje se procesan localmente; el historial puede quedar en la base local de la app hasta que borres los datos de la app o la desinstales.</li>
+<li><strong>Configuración remota:</strong> Firebase Remote Config y Firestore se usan para descargar parámetros del parser. Al solicitar ese servicio, Firebase puede recibir un identificador seudónimo de instalación y datos técnicos básicos de la app y el dispositivo.</li>
+<li><strong>Diagnósticos opcionales:</strong> desactivados por defecto y controlables desde Ajustes. Si los activas, Firebase Crashlytics puede recibir informes de fallos con trazas técnicas y datos del dispositivo/app (por ejemplo, modelo, sistema operativo y versión de la app). Firestore solo admite eventos técnicos permitidos, plataforma (Uber o DiDi), versión y código de la app, nivel de Android y marcas de tiempo. No se incluyen texto OCR, precio, distancia, duración ni modelo del dispositivo en esos eventos de Firestore.</li>
+<li><strong>Identificadores técnicos:</strong> Firebase puede utilizar un identificador de instalación y la app intenta crear un identificador seudónimo de autenticación anónima. No se solicita nombre ni correo para esa operación; la app no ofrece inicio de sesión con cuenta en esta versión.</li>
 </ul>
+<p>Radar Pro 3.19.33 no incluye Firebase Analytics ni SDK/interfaz de anuncios de AdMob, ni solicita el permiso de identificador de publicidad. El envío de datos a Firebase ocurre para prestar servicios de configuración y, si lo autorizas, diagnóstico. Google/Firebase actúa como proveedor de infraestructura y procesa los datos conforme a sus términos y políticas; no vendemos los datos ni los compartimos para publicidad.</p>
 
-<h2>5. Con quién se comparte</h2>
-<ul>
-<li><strong>Google Firebase</strong> (Firestore, Auth, Crashlytics, Analytics, Remote Config) — infraestructura en EE. UU./UE bajo DPA de Google.</li>
-<li><strong>Google Play Services / AdMob</strong> (ID ca-app-pub-7312412531615728~4519330514) — mediación de anuncios; ver <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Google</a>.</li>
-<li>No vendemos datos a terceros ni los compartimos con Uber/DiDi.</li>
-</ul>
+<h2>4. Versiones anteriores</h2>
+<p>Versiones anteriores a la 3.19.33 podían enviar automáticamente a Firebase fragmentos de texto OCR y datos extraídos del viaje, como tarifa, distancia y duración; también incluían telemetría de Analytics. Actualiza a la versión 3.19.33 o posterior para desactivar esas cargas automáticas. La actualización no elimina los registros que se hubieran enviado anteriormente. No se han borrado los registros históricos de Firestore; puedes solicitar información o eliminación escribiendo al correo de contacto.</p>
 
-<h2>6. Transferencias internacionales</h2>
-<p>Firebase puede procesar datos fuera de México. Nos amparamos en cláusulas contractuales estándar de Google y tu consentimiento al usar la app.</p>
+<h2>5. Base, finalidad y elección</h2>
+<p>El procesamiento local es necesario para ofrecer las funciones que solicitas al usar la app y conceder MediaProjection. Los parámetros remotos permiten mantener la configuración del parser. Los diagnósticos se envían únicamente tras activar expresamente la opción en Ajustes; puedes desactivarla en cualquier momento. Si no los activas, la app no envía los eventos opcionales de diagnóstico ni los informes de Crashlytics.</p>
 
-<h2>7. Retención</h2>
-<ul>
-<li>Telemetría <code>ocr_diagnostics</code>: se conserva anonimizada para entrenar el parser; puedes pedir su borrado y se desasocia de tu UID.</li>
-<li>Logs Crashlytics/Analytics: hasta 14 meses.</li>
-<li>Cuenta: hasta que la elimines.</li>
-</ul>
+<h2>6. Seguridad y transferencias</h2>
+<p>Las comunicaciones de red de la app usan conexiones cifradas en tránsito (TLS); la configuración de la app bloquea tráfico HTTP sin cifrar. Firebase es un servicio de Google y puede procesar información en centros de datos fuera de México conforme a la configuración y condiciones del servicio. No afirmamos que los datos locales estén cifrados en reposo.</p>
 
-<h2>8. Tus derechos (LFPDPPP - México / GDPR si aplica)</h2>
-<p>Tienes derechos de <strong>Acceso, Rectificación, Cancelación y Oposición (ARCO)</strong>, portabilidad y revocación del consentimiento. Ejerce escribiendo a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a> con asunto "ARCO Radar Pro". Respondemos en máximo 20 días hábiles. También puedes: borrar la app, revocar permisos en Ajustes de Android, desactivar personalización de anuncios en <code>Ajustes → Google → Anuncios</code>, y solicitar supresión de tu cuenta desde la app (Ajustes → Eliminar cuenta).</p>
+<h2>7. Conservación</h2>
+<p>Los datos locales permanecen en el dispositivo hasta que borres el almacenamiento de Radar Pro o la desinstales. Los parámetros de configuración se almacenan en caché localmente. Los registros remotos históricos enviados por versiones anteriores no se eliminan automáticamente al actualizar; su conservación depende de los servicios Firebase y de las solicitudes aplicables. No se ha establecido en esta política un plazo fijo de conservación de esos registros. Para ejercer derechos o solicitar revisión/eliminación de registros, contáctanos.</p>
 
-<h2>9. Menores</h2>
-<p>Radar Pro es solo para conductores mayores de 18 años. No recopilamos conscientemente datos de menores.</p>
+<h2>8. Derechos y solicitudes</h2>
+<p>Puedes solicitar acceso, rectificación, cancelación o eliminación y presentar consultas sobre el tratamiento escribiendo a <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a>. La app no tiene una función de inicio de sesión o eliminación de cuenta desde Ajustes; las solicitudes sobre registros de Firebase deben hacerse por correo. También puedes revocar MediaProjection o desactivar los diagnósticos desde Android/Ajustes de la app.</p>
 
-<h2>10. Seguridad</h2>
-<p>Cifrado en tránsito (TLS), reglas Firestore con <code>request.auth != null</code> y validación, tokens OAuth con rotación, y minimización de datos. Ningún sistema es 100% seguro; notifícanos cualquier incidente al correo de contacto.</p>
+<h2>9. Cambios a este aviso</h2>
+<p>Publicaremos cualquier actualización de este aviso en esta misma dirección y señalaremos la fecha de revisión.</p>
 
-<h2>11. Cambios a este aviso</h2>
-<p>Publicaremos cambios en esta misma URL y actualizaremos la fecha. Si el cambio es material, te avisaremos dentro de la app o por correo.</p>
-
-<h2>12. Contacto y autoridad</h2>
-<p>Dudas o quejas: <a href="mailto:vrsh840710@gmail.com">vrsh840710@gmail.com</a>.<br>
-Autoridad en México: INAI — <a href="https://home.inai.org.mx" target="_blank" rel="noopener">home.inai.org.mx</a></p>
-
+<h2>10. Proveedores</h2>
+<p>Servicios de Google Firebase utilizados: Remote Config, Cloud Firestore, Firebase Authentication anónima y, únicamente si activas diagnósticos, Crashlytics. Para información sobre el tratamiento de Google, consulta <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">la Política de Privacidad de Google</a>.</p>
 <hr>
-<p class="muted">VR Labs · Radar Pro · <a href="https://vrshlabs.com">vrshlabs.com</a> · Este aviso cumple con la LFPDPPP y los requisitos de <a href="https://play.google.com/about/privacy-security-deception/user-data/" target="_blank" rel="noopener">Google Play - User Data</a> y <a href="https://play.google.com/about/privacy-security-deception/deception/" target="_blank" rel="noopener">Deception</a>. No constituye asesoría legal.</p>
+<p class="muted">Versión de la app cubierta específicamente: 3.19.33 / 444. Las prácticas de versiones anteriores se describen en la sección 4.</p>
 </body>
 </html>
